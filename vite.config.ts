@@ -3,13 +3,14 @@ import { defineConfig } from 'vite';
 import css from 'unocss/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import devtools from 'solid-devtools/vite';
+import adapter from 'solid-start-static';
 
 export default defineConfig({
   server: {
     port: 3333,
   },
   plugins: [
-    solid({ adapter: await import('solid-start-static' as string) }),
+    solid({ adapter: adapter() }),
     devtools({
       autoname: true,
       locator:  {
