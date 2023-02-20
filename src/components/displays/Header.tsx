@@ -16,7 +16,7 @@ export default function Header() {
   });
 
   return (
-    <header class="flex justify-between p-8">
+    <header class="flex justify-between py-8">
       <img src="/images/logo.svg" alt="logo" />
       <button
         type="button"

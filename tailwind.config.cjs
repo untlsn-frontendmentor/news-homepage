@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         c: {
           pink: '#C77E79',
+          red: '#F15D51',
+          gold: '#F3AB5C',
+          navy: '#00001A',
         },
       },
     },
