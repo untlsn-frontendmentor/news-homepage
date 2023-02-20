@@ -138,6 +138,21 @@ const config = defineConfig({
         // All icons placed inside src/assets/icons will be listed as i-my-${file-name}
         my: FileSystemIconLoader(
           './src/assets/icons',
+          (svg) => (
+            svg
+              // replace width and height with viewBox (responsive) when width is first
+              .replace(/width="\d+" height="\d+"/, (size) => {
+                const [width, height] = size.match(/\d+/g) || [];
+                return `viewBox="0 0 ${width} ${height}"`;
+              })
+              // replace width and height with viewBox (responsive) when height is first
+              .replace(/height="\d+" width="\d+"/, (size) => {
+                const [height, width] = size.match(/\d+/g) || [];
+                return `viewBox="0 0 ${width} ${height}"`;
+              })
+              // often black color is color of text, so can be replaced with currentColor
+              .replaceAll('#fff', 'currentColor')
+          ),
         ),
       },
     }),

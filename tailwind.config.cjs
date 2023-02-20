@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         c: {
-          carbon: '#0C0C0D',
+          pink: '#C77E79',
         },
       },
     },
